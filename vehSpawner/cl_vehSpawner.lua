@@ -8,8 +8,8 @@ end
 
 local spawnedVehicle = nil
 
---- you may change the / command right now its /veh {vehname}
-RegisterCommand('veh', function(source, args, rawCommand)
+--- You're able to change the / command to something else than /veh. ---
+RegisterCommand('v', function(source, args, rawCommand)
     local veh = args[1]
     if veh == nil then
         veh = "adder"
@@ -40,7 +40,7 @@ RegisterCommand('veh', function(source, args, rawCommand)
                 heading = oldHeading
             end
             
-            local vehicle = CreateVehicle(vehiclehash, x, y, z, heading + 90, 1, 0)
+            local vehicle = CreateVehicle(vehiclehash, x, y, z, heading + 0)
             SetPedIntoVehicle(playerPed, vehicle, -1)
             SetEntityAsNoLongerNeeded(vehicle)
             SetModelAsNoLongerNeeded(vehiclehash)
